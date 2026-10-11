@@ -1,0 +1,302 @@
+/* ============================================================
+   style.css — Viajes Chile
+   Google Fonts: Montserrat (display) + Open Sans (body)
+   Paleta: #000000 fondo | #00d4f5 acento cyan | #ffffff texto
+   Bootstrap 5.3.3 + Font Awesome 6.5.1
+   ============================================================ */
+
+/* ---------- Variables de color ---------- */
+:root {
+  --color-black:   #000000;
+  --color-dark:    #111111;
+  --color-cyan:    #00d4f5;
+  --color-cyan-dk: #009ab5;
+  --color-white:   #ffffff;
+  --color-gray:    #cccccc;
+  --font-display:  'Montserrat', sans-serif;
+  --font-body:     'Open Sans', sans-serif;
+}
+
+/* ---------- Reset general ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Smooth scroll para los links del navbar */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 212, 245, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* Cuando el usuario hace scroll, el navbar se vuelve sólido */
+#navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.97);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.text-cyan {
+  color: var(--color-cyan) !important;
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray) !important;
+  padding: 0.5rem 1rem;
+  transition: color 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--color-cyan) !important;
+}
+
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+.carousel-img {
+  height: 92vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.carousel-caption {
+  bottom: 15%;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.carousel-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: var(--color-cyan);
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+/* Controles del carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* ============================================================
+   SECCIÓN QUIÉNES SOMOS (oculta en mobile por diseño)
+   ============================================================ */
+.section-dark {
+  background-color: var(--color-dark);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.quien-card {
+  padding: 1.5rem;
+}
+
+.quien-icon {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quien-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-gray);
+}
+
+/* ============================================================
+   SECCIÓN DESTACADOS
+   ============================================================ */
+.section-black {
+  background-color: var(--color-black);
+}
+
+.destino-card {
+  background-color: var(--color-black);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destino-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 212, 245, 0.2);
+}
+
+.destino-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Cuerpo de la card con fondo cyan del diseño */
+.card-body-cyan {
+  background-color: var(--color-cyan);
+  padding: 1rem;
+}
+
+.card-title-dest {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.card-text-dest {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-black);
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   SECCIÓN CONTACTO
+   ============================================================ */
+.label-contact {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-gray);
+  margin-bottom: 0.4rem;
+}
+
+.input-contact {
+  background-color: var(--color-black);
+  border: 1px solid #333333;
+  border-radius: 0;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.input-contact:focus {
+  background-color: var(--color-black);
+  border-color: var(--color-cyan);
+  color: var(--color-white);
+  box-shadow: 0 0 0 2px rgba(0, 212, 245, 0.25);
+  outline: none;
+}
+
+.input-contact::placeholder {
+  color: #555555;
+  font-size: 0.85rem;
+}
+
+/* Botón enviar */
+.btn-cyan-custom {
+  background-color: var(--color-cyan);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 0;
+  padding: 0.6rem 2rem;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-cyan-custom:hover {
+  background-color: var(--color-cyan-dk);
+  color: var(--color-black);
+  transform: translateY(-1px);
+}
+
+.btn-cyan-custom:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-cyan {
+  background-color: var(--color-cyan);
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+  color: var(--color-black);
+}
+
+.footer-icon {
+  color: var(--color-black);
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-icon:hover {
+  opacity: 0.6;
+  color: var(--color-black);
+}
+
+/* ============================================================
+   RESPONSIVE: ajustes menores en mobile
+   ============================================================ */
+@media (max-width: 767.98px) {
+  .carousel-img {
+    height: 60vh;
+  }
+
+  .carousel-caption {
+    display: none !important;
+  }
+}
